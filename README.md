@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Aplikasi Pengajuan Pembelian Barang - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi ini adalah frontend untuk sistem pengajuan pembelian barang. Aplikasi ini menyediakan antarmuka pengguna untuk berbagai peran seperti Officer, Manager, dan Finance dengan fitur-fitur yang sesuai dengan otoritas mereka.
 
-## Available Scripts
+## Daftar Isi
 
-In the project directory, you can run:
+- [Tentang Proyek](#tentang-proyek)
+- [Fitur](#fitur)
+- [Prasyarat](#prasyarat)
+- [Instalasi](#instalasi)
+- [Penggunaan](#penggunaan)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Dependensi](#dependensi)
+- [Kontak](#kontak)
 
-### `npm start`
+## Tentang Proyek
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Proyek ini adalah aplikasi web untuk mengelola pengajuan pembelian barang. Aplikasi ini dirancang untuk berbagai peran pengguna dengan otoritas yang berbeda-beda, seperti Officer, Manager, dan Finance.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Fitur
 
-### `npm test`
+1. **Halaman Login**
+2. **Halaman Auth Officer**
+    - CRUD Pengajuan Pembelian Barang
+    - List Pengajuan
+3. **Halaman Auth Manager**
+    - List Pengajuan yang Perlu Diapprove
+    - History Pengajuan yang Telah Diapprove
+    - Halaman Keputusan Persetujuan
+4. **Halaman Auth Finance**
+    - List Pengajuan yang Perlu Diapprove
+    - Halaman Keputusan Persetujuan
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prasyarat
 
-### `npm run build`
+Pastikan Anda telah menginstal perangkat lunak berikut:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/) versi 20.14.0
+- npm versi 10.7.0 atau [yarn](https://yarnpkg.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalasi
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Berikut adalah langkah-langkah untuk menginstal proyek ini secara lokal.
 
-### `npm run eject`
+1. Clone repository ini:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone https://github.com/ramaleksana/Pengajuan-Pembelian-Barang-Frontend.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Masuk ke direktori proyek:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   cd Pengajuan-Pembelian-Barang-Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Instal dependensi dengan npm atau yarn:
 
-## Learn More
+   ```bash
+   npm install
+   # atau
+   yarn install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Penggunaan
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Berikut adalah langkah-langkah untuk menjalankan proyek ini secara lokal.
 
-### Code Splitting
+1. Jalankan server pengembangan:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm start
+   # atau
+   yarn start
+   ```
+2. Buka http://localhost:3000 di browser untuk melihat aplikasi.
 
-### Analyzing the Bundle Size
+## Teknologi yang Digunakan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
+- Node.js versi 20.14.0
+- npm versi 10.7.0
 
-### Making a Progressive Web App
+## Dependensi
+- [axios](https://axios-http.com/)
+- [bootstrap](https://getbootstrap.com/)
+- [react-router-dom](https://reactrouter.com/)
+- [react-data-table-component](https://react-data-table-component.netlify.app/)
+- [reactstrap](https://reactstrap.github.io/)
+- [styled-components](https://styled-components.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Kontak
+- ramaleksana@gmail.com
+- https://github.com/ramaleksana/Pengajuan-Pembelian-Barang-Frontend
