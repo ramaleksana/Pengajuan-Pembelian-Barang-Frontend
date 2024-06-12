@@ -13,15 +13,19 @@ const DataTableServer = ({ title = "", actions, columns, endPoint }) => {
         async (page, per_page) => {
             setLoading(true);
 
-            const response = await instance.get(endPoint, {
-                params: {
-                    page,
-                    limit: per_page,
-                },
-            });
-            if (response.status === 200) {
-                setData(response.data.data);
-                setTotalRows(response.data.total);
+            try {
+                const response = await instance.get(endPoint, {
+                    params: {
+                        page,
+                        limit: per_page,
+                    },
+                });
+                if (response.status === 200) {
+                    setData(response.data.data);
+                    setTotalRows(response.data.total);
+                }
+            } catch (error) {
+            } finally {
                 setLoading(false);
             }
         },
@@ -36,7 +40,7 @@ const DataTableServer = ({ title = "", actions, columns, endPoint }) => {
         fetchData(page, perPage);
     };
 
-    const handlePerRowsChange = async (newPerPage, page) => {
+    const handlePerRowsChange = (newPerPage, page) => {
         setPerPage(newPerPage);
         fetchData(page, newPerPage);
     };

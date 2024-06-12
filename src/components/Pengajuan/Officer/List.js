@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Badge, Col, Container, Row } from "reactstrap";
+import { Badge, Button, Col, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import {
     BASE_URL,
@@ -8,6 +8,8 @@ import {
     STATUS_REJECTED,
 } from "../../../constant";
 import DataTableServer from "../../DataTableServer";
+import Swal from "sweetalert2";
+import { deletePengajuan } from "../../../services/pengajuanService";
 
 const columns = [
     {
@@ -32,7 +34,7 @@ const columns = [
     },
     {
         name: "Catatan",
-        selector: null,
+        cell: (row) => <Catatan row={row} />,
     },
     {
         name: "#",
@@ -41,8 +43,21 @@ const columns = [
     },
 ];
 
+const Catatan = ({ row }) => {
+    return (
+        <Fragment>
+            {row.status_on_manager === STATUS_REJECTED &&
+            row.note_from_manager !== null
+                ? row.note_from_manager
+                : row.status_on_finance === STATUS_REJECTED &&
+                  row.note_from_finance !== null
+                ? row.note_from_finance
+                : "-"}
+        </Fragment>
+    );
+};
+
 const StatusPengajuan = ({ row }) => {
-    // const status = "";
     return (
         <Fragment>
             <div>
@@ -70,23 +85,55 @@ const BadgeStatusPengajuan = ({ status }) => {
 };
 
 const ActionButton = ({ row }) => {
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Kamu yakin menghapus data ini?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya",
+            cancelButtonText: "Batal",
+            preConfirm: async () => {
+                try {
+                    const response = await deletePengajuan(id);
+                    return response;
+                } catch (error) {
+                    Swal.showValidationMessage(error.message);
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading(),
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Sukses",
+                    text: result.message,
+                    icon: "success",
+                });
+                window.location.reload();
+            }
+        });
+    };
+
     return (
         <Fragment>
             {row.status_on_manager === STATUS_PENDING &&
                 row.status_on_finance === STATUS_PENDING && (
                     <Fragment>
                         <Link
-                            to={"/"}
+                            to={`/pengajuan/edit/${row.id}`}
                             className="btn btn-success btn-sm me-1 text-nowrap"
                         >
                             Ubah
                         </Link>
-                        <Link
-                            to={"/"}
-                            className="btn btn-danger btn-sm me-1 text-nowrap"
+                        <Button
+                            className="me-1 text-nowrap"
+                            color="danger"
+                            size="sm"
+                            onClick={() => handleDelete(row.id)}
                         >
                             Hapus
-                        </Link>
+                        </Button>
                     </Fragment>
                 )}
             <Link to={"/"} className="btn btn-warning btn-sm me-1 text-nowrap">
@@ -104,7 +151,10 @@ const ListPengajuanOfficer = () => {
                     <DataTableServer
                         title="List Pengajuan Barang"
                         actions={
-                            <Link to={"/"} className="btn btn-primary btn-sm">
+                            <Link
+                                to={"/pengajuan/add"}
+                                className="btn btn-primary btn-sm"
+                            >
                                 Tambah
                             </Link>
                         }

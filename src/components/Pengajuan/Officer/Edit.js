@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import FormMultiple from "./FormMultiple";
 import Swal from "sweetalert2";
-import { addPengajuan } from "../../../services/pengajuanService";
-import { useNavigate } from "react-router-dom";
+import {
+    editPengajuan,
+    showPengajuanOfficer,
+} from "../../../services/pengajuanService";
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddFormPengajuan = () => {
+const EditFormPengajuan = () => {
     const [loading, setLoading] = useState(false);
+    const [items, setItems] = useState([]);
     const navigate = useNavigate();
+    const { id } = useParams();
 
     const handleSubmit = async (items = []) => {
         setLoading(true);
-        const response = await addPengajuan(items);
+        const response = await editPengajuan(items, id);
         if (response.status) {
             Swal.fire({
                 icon: "success",
@@ -29,6 +34,16 @@ const AddFormPengajuan = () => {
         setLoading(false);
     };
 
+    const fetchData = useCallback(async () => {
+        const response = await showPengajuanOfficer(id);
+        let dataItems = response.data ? JSON.parse(response.data.items) : [];
+        setItems(dataItems);
+    }, [id]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
     return (
         <Container>
             <Row className="justify-content-center">
@@ -36,6 +51,7 @@ const AddFormPengajuan = () => {
                     <FormMultiple
                         loading={loading}
                         handleSubmit={handleSubmit}
+                        data={items}
                     />
                 </Col>
             </Row>
@@ -43,4 +59,4 @@ const AddFormPengajuan = () => {
     );
 };
 
-export default AddFormPengajuan;
+export default EditFormPengajuan;

@@ -4,14 +4,14 @@ Aplikasi ini adalah frontend untuk sistem pengajuan pembelian barang. Aplikasi i
 
 ## Daftar Isi
 
-- [Tentang Proyek](#tentang-proyek)
-- [Fitur](#fitur)
-- [Prasyarat](#prasyarat)
-- [Instalasi](#instalasi)
-- [Penggunaan](#penggunaan)
-- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
-- [Dependensi](#dependensi)
-- [Kontak](#kontak)
+-   [Tentang Proyek](#tentang-proyek)
+-   [Fitur](#fitur)
+-   [Prasyarat](#prasyarat)
+-   [Instalasi](#instalasi)
+-   [Penggunaan](#penggunaan)
+-   [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+-   [Dependensi](#dependensi)
+-   [Kontak](#kontak)
 
 ## Tentang Proyek
 
@@ -35,8 +35,8 @@ Proyek ini adalah aplikasi web untuk mengelola pengajuan pembelian barang. Aplik
 
 Pastikan Anda telah menginstal perangkat lunak berikut:
 
-- [Node.js](https://nodejs.org/) versi 20.14.0
-- npm versi 10.7.0 atau [yarn](https://yarnpkg.com/)
+-   [Node.js](https://nodejs.org/) versi 20.14.0
+-   npm versi 10.7.0 atau [yarn](https://yarnpkg.com/)
 
 ## Instalasi
 
@@ -44,21 +44,25 @@ Berikut adalah langkah-langkah untuk menginstal proyek ini secara lokal.
 
 1. Clone repository ini:
 
-   ```bash
-   git clone https://github.com/ramaleksana/Pengajuan-Pembelian-Barang-Frontend.git
+    ```bash
+    git clone https://github.com/ramaleksana/Pengajuan-Pembelian-Barang-Frontend.git
+
+    ```
 
 2. Masuk ke direktori proyek:
 
-   ```bash
-   cd Pengajuan-Pembelian-Barang-Frontend
+    ```bash
+    cd Pengajuan-Pembelian-Barang-Frontend
+
+    ```
 
 3. Instal dependensi dengan npm atau yarn:
 
-   ```bash
-   npm install
-   # atau
-   yarn install
-   ```
+    ```bash
+    npm install
+    # atau
+    yarn install
+    ```
 
 ## Penggunaan
 
@@ -66,28 +70,32 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini secara lokal.
 
 1. Jalankan server pengembangan:
 
-   ```bash
-   npm start
-   # atau
-   yarn start
-   ```
+    ```bash
+    npm start
+    # atau
+    yarn start
+    ```
+
 2. Buka http://localhost:3000 di browser untuk melihat aplikasi.
 
 ## Teknologi yang Digunakan
 
-- [React](https://react.dev/)
-- [React Router](https://reactrouter.com/)
-- Node.js versi 20.14.0
-- npm versi 10.7.0
+-   [React](https://react.dev/)
+-   [React Router](https://reactrouter.com/)
+-   Node.js versi 20.14.0
+-   npm versi 10.7.0
 
 ## Dependensi
-- [axios](https://axios-http.com/)
-- [bootstrap](https://getbootstrap.com/)
-- [react-router-dom](https://reactrouter.com/)
-- [react-data-table-component](https://react-data-table-component.netlify.app/)
-- [reactstrap](https://reactstrap.github.io/)
-- [styled-components](https://styled-components.com/)
+
+-   [axios](https://axios-http.com/)
+-   [bootstrap](https://getbootstrap.com/)
+-   [react-router-dom](https://reactrouter.com/)
+-   [react-data-table-component](https://react-data-table-component.netlify.app/)
+-   [reactstrap](https://reactstrap.github.io/)
+-   [styled-components](https://styled-components.com/)
+-   [sweetalert2](https://sweetalert2.github.io/)
 
 ## Kontak
-- ramaleksana@gmail.com
-- https://github.com/ramaleksana/Pengajuan-Pembelian-Barang-Frontend
+
+-   ramaleksana@gmail.com
+-   https://github.com/ramaleksana/Pengajuan-Pembelian-Barang-Frontend

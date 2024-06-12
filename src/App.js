@@ -6,6 +6,8 @@ import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import HomePage from "./pages/HomePage";
 import PengajuanPage from "./pages/PengajuanPage";
+import AddPengajuanPage from "./pages/AddPengajuanPage";
+import EditPengajuanPage from "./pages/EditPengajuanPage";
 
 const AppContent = () => {
     return (
@@ -16,6 +18,14 @@ const AppContent = () => {
                 <Route element={<ProtectedRoute />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="pengajuan" element={<PengajuanPage />} />
+                    <Route
+                        path="pengajuan/add"
+                        element={<AddPengajuanPage />}
+                    />
+                    <Route
+                        path="pengajuan/edit/:id"
+                        element={<EditPengajuanPage />}
+                    />
                 </Route>
             </Routes>
         </Fragment>

@@ -25,13 +25,13 @@ const Navbar = () => {
                 </NavItem>
             </Nav>
             {isLoggedIn ? (
-                <Button color="danger" onClick={handleLogout}>
+                <Button color="danger" size="sm" onClick={handleLogout}>
                     Logout
                 </Button>
             ) : (
-                <Button color="primary" href="/login">
+                <Link className="btn btn-primary btn-sm" to="/login">
                     Login
-                </Button>
+                </Link>
             )}
         </RSNavbar>
     );

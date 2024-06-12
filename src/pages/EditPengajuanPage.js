@@ -1,7 +1,8 @@
 import React from "react";
+import EditFormPengajuan from "../components/Pengajuan/Officer/Edit";
 
 const EditPengajuanPage = () => {
-    return <div></div>;
+    return <EditFormPengajuan />;
 };
 
 export default EditPengajuanPage;
