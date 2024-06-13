@@ -7,10 +7,9 @@ import {
 
 const AuthContext = createContext();
 
-const getUsername = localStorage.getItem("username") || null;
-const getRole = localStorage.getItem("role") || null;
-
 const AuthProvider = ({ children }) => {
+    const getUsername = localStorage.getItem("username") || null;
+    const getRole = localStorage.getItem("role") || null;
     const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
     const [role, setRole] = useState(getRole);
     const [username, setUsername] = useState(getUsername);
@@ -35,7 +34,7 @@ const AuthProvider = ({ children }) => {
         setUsername(getUsername);
         setRole(getRole);
         setIsLoggedIn(isAuthenticated());
-    }, []);
+    }, [getRole, getUsername]);
 
     return (
         <AuthContext.Provider

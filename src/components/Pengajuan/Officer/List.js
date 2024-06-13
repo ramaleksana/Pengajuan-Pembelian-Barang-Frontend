@@ -136,7 +136,10 @@ const ActionButton = ({ row }) => {
                         </Button>
                     </Fragment>
                 )}
-            <Link to={"/"} className="btn btn-warning btn-sm me-1 text-nowrap">
+            <Link
+                to={`/pengajuan/detail/${row.id}`}
+                className="btn btn-warning btn-sm me-1 text-nowrap"
+            >
                 Detail
             </Link>
         </Fragment>
