@@ -8,7 +8,7 @@ import PengajuanPage from "../pages/PengajuanPage";
 import AddPengajuanPage from "../pages/AddPengajuanPage";
 import EditPengajuanPage from "../pages/EditPengajuanPage";
 import { useAuth } from "../context/AuthContext";
-import { ROLE_MANAGER, ROLE_OFFICER } from "../constant";
+import { ROLE_FINANCE, ROLE_MANAGER, ROLE_OFFICER } from "../constant";
 import { Col, Container, Row } from "reactstrap";
 import DetailPengajuanPage from "../pages/DetailPengajuanPage";
 import KeputusanPage from "../pages/KeputusanPage";
@@ -49,6 +49,14 @@ const Layout = () => {
                             <Route
                                 path="pengajuan/history"
                                 element={<HistoryPengajuanPage />}
+                            />
+                        </Fragment>
+                    )}
+                    {role === ROLE_FINANCE && (
+                        <Fragment>
+                            <Route
+                                path="pengajuan/decision/:id"
+                                element={<KeputusanPage />}
                             />
                         </Fragment>
                     )}

@@ -14,8 +14,8 @@ import {
 
 const LoginPage = () => {
     const { isLoggedIn, login } = useAuth();
-    const [username, setUsername] = useState("officer");
-    const [password, setPassword] = useState("password123");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {

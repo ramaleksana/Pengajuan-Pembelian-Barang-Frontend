@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import { showPengajuanOfficer } from "../../../services/pengajuanService";
 import {
+    BASE_URL_IMAGE,
     STATUS_APPROVED,
     STATUS_PENDING,
     STATUS_REJECTED,
@@ -127,6 +128,17 @@ const DetailPengajuanOfficer = () => {
                                     <small className="text-body-secondary">
                                         {item?.update_status_on_finance}
                                     </small>
+                                    <div>
+                                        Bukti Transfer:
+                                        <img
+                                            src={
+                                                BASE_URL_IMAGE +
+                                                item?.finance_document
+                                            }
+                                            alt="Bukti Transfer"
+                                            style={{ width: "100%" }}
+                                        />
+                                    </div>
                                 </Fragment>
                             ) : item?.status_on_finance === STATUS_REJECTED ? (
                                 <Fragment>

@@ -66,7 +66,13 @@ const StatusPengajuan = ({ row }) => {
             </div>
             <div>
                 <span style={{ fontWeight: "bold" }}>Finance :</span>{" "}
-                <BadgeStatusPengajuan status={row.status_on_finance} />
+                <BadgeStatusPengajuan
+                    status={
+                        row.status_on_manager === STATUS_REJECTED
+                            ? "STATUS_"
+                            : row.status_on_finance
+                    }
+                />
             </div>
         </Fragment>
     );
@@ -80,7 +86,7 @@ const BadgeStatusPengajuan = ({ status }) => {
     } else if (status === STATUS_REJECTED) {
         return <Badge color="danger">Ditolak</Badge>;
     } else {
-        return <Badge>-</Badge>;
+        return "-";
     }
 };
 
